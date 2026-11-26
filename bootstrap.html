@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail L1 - Version Bootstrap 5</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Portail L1 Informatique</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#presentation">Unités d'Enseignement</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#horaire">Horaire</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#inscription">Inscription TP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#simulateur">Simulateur LMD</a></li>
+                    <li class="nav-item"><a class="nav-link text-info fw-semibold" href="index.html">Version CSS pur</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary text-white text-center py-5 mb-4 border-bottom border-info border-4">
+        <div class="container">
+            <h1 class="display-6 fw-bold">Portail Académique — Première Licence (L1 LMD)</h1>
+            <p class="lead mb-0">Mention : Mathématiques, Statistique et Informatique (Système LMD)</p>
+        </div>
+    </header>
+
+    <main class="container my-4">
+
+        <!-- Section 1 : Grille Bootstrap à 12 colonnes -->
+        <section id="presentation" class="mb-5">
+            <h2 class="h4 text-primary border-bottom border-primary pb-2 mb-4">Unités d'Enseignement — Semestre 1</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">UE 101 - 6 Crédits</span>
+                            <h3 class="h5 card-title fw-bold">Programmation Web</h3>
+                            <p class="card-text text-muted">Maîtrise des standards HTML5, CSS3, Responsive Design, Bootstrap 5 et JavaScript ES6+.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">UE 102 - 6 Crédits</span>
+                            <h3 class="h5 card-title fw-bold">Algorithmique</h3>
+                            <p class="card-text text-muted">Conception d'algorithmes, structures conditionnelles, boucles, tableaux et complexité.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <span class="badge bg-info text-dark mb-2">UE 103 - 4 Crédits</span>
+                            <h3 class="h5 card-title fw-bold">Architecture & Systèmes</h3>
+                            <p class="card-text text-muted">Fonctionnement interne des ordinateurs, codage binaire et administration Linux/Windows.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2 : Tableau responsive -->
+        <section id="horaire" class="card shadow-sm border-0 p-4 mb-5">
+            <h2 class="h4 text-primary border-bottom border-primary pb-2 mb-3">Emploi du temps hebdomadaire</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered align-middle mb-0">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Jour</th>
+                            <th>Matin (08h00 - 12h00)</th>
+                            <th>Après-midi (13h00 - 16h00)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-semibold">Lundi</td>
+                            <td>Programmation Web (CMI)</td>
+                            <td>Algorithmique</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-semibold">Mardi</td>
+                            <td colspan="2" class="text-center table-info fw-semibold">Travaux Pratiques en Laboratoire Informatique</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-semibold">Mercredi</td>
+                            <td>Mathématiques Discrètes</td>
+                            <td>Anglais Technique</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 3 : Formulaire d'inscription interactif -->
+        <section id="inscription" class="card shadow-sm border-0 p-4 mb-5">
+            <h2 class="h4 text-primary border-bottom border-primary pb-2 mb-3">Inscription aux séances de Travaux Pratiques</h2>
+            <form id="form-tp">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="nom" class="form-label fw-semibold">Nom complet :</label>
+                        <input type="text" class="form-control" id="nom" placeholder="Ex : Kabamba Jean" required minlength="3">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label fw-semibold">E-mail institutionnel :</label>
+                        <input type="email" class="form-control" id="email" placeholder="etudiant@unikin.ac.cd" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="groupe" class="form-label fw-semibold">Groupe de TP :</label>
+                        <select class="form-select" id="groupe">
+                            <option value="Groupe 1 (Matin)">Groupe 1 (Matin : 08h00 - 12h00)</option>
+                            <option value="Groupe 2 (Après-midi)">Groupe 2 (Après-midi : 13h00 - 16h00)</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary px-4 fw-bold">Valider mon inscription</button>
+                    </div>
+                </div>
+                <div id="message-tp"></div>
+            </form>
+        </section>
+
+        <!-- Section 4 : Simulateur de moyenne LMD -->
+        <section id="simulateur" class="card shadow-sm border-0 p-4 mb-5">
+            <h2 class="h4 text-primary border-bottom border-primary pb-2 mb-3">Simulateur de Moyenne Semestrielle (LMD)</h2>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label for="note-web" class="form-label fw-semibold">Programmation Web (/20 — 6 cr.)</label>
+                    <input type="number" class="form-control" id="note-web" min="0" max="20" step="0.5" placeholder="Ex : 14">
+                </div>
+                <div class="col-md-4">
+                    <label for="note-algo" class="form-label fw-semibold">Algorithmique (/20 — 6 cr.)</label>
+                    <input type="number" class="form-control" id="note-algo" min="0" max="20" step="0.5" placeholder="Ex : 12">
+                </div>
+                <div class="col-md-4">
+                    <label for="note-archi" class="form-label fw-semibold">Architecture (/20 — 4 cr.)</label>
+                    <input type="number" class="form-control" id="note-archi" min="0" max="20" step="0.5" placeholder="Ex : 11">
+                </div>
+                <div class="col-12">
+                    <button type="button" id="btn-calculer" class="btn btn-success fw-bold px-4">Calculer ma moyenne LMD</button>
+                </div>
+            </div>
+            <div id="resultat-lmd"></div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p class="mb-0">&copy; reserved by Doctorant Héritier Mpiana 2026 (Système LMD) | <font color='#38bdf8'>héritier.mpiana@unikin.ac.cd</font> | Propulsé par Bootstrap 5</p>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

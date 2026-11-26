@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail Académique L1 LMD - Faculté des Sciences</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header id="haut">
+        <img >   </img>
+        <h1>Portail Académique — Première Licence (L1 LMD)</h1>
+        <p><strong>Mention: Mathématiques, Statistique et Informatique (Système LMD)</strong></p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#presentation">Unités d'Enseignement</a></li>
+            <li><a href="#horaire">Horaire</a></li>
+            <li><a href="#inscription">Inscription TP</a></li>
+            <li><a href="#simulateur">Simulateur LMD</a></li>
+            <li><a href="bootstrap.html">Version Bootstrap 5</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Section 1 : Présentation en cartes (CSS Grid) -->
+        <section id="presentation">
+            <h2>Unités d'Enseignement — Semestre 1 (Système LMD)</h2>
+            <p>Bienvenue sur le portail officiel des étudiants de <em>Première Licence</em>. Retrouvez ci-dessous les matières principales du semestre :</p>
+            
+            <div class="grille-cours">
+                <article class="carte-cours">
+                    <h3>Programmation Web (6 crédits)</h3>
+                    <p>Maîtrise des standards HTML5, CSS3, Responsive Design, Bootstrap 5 et JavaScript ES6+.</p>
+                </article>
+
+                <article class="carte-cours">
+                    <h3>Algorithmique (6 crédits)</h3>
+                    <p>Conception d'algorithmes, structures conditionnelles, boucles, tableaux et complexité.</p>
+                </article>
+
+                <article class="carte-cours">
+                    <h3>Architecture & Systèmes (4 crédits)</h3>
+                    <p>Fonctionnement interne des ordinateurs, codage binaire et administration Linux/Windows.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 2 : Tableau d'horaire -->
+        <section id="horaire">
+            <h2>Emploi du temps hebdomadaire</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jour</th>
+                        <th>Matin (08h00 - 12h00)</th>
+                        <th>Après-midi (13h00 - 16h00)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lundi</td>
+                        <td>Programmation Web (CMI)</td>
+                        <td>Algorithmique</td>
+                    </tr>
+                    <tr>
+                        <td>Mardi</td>
+                        <td colspan="2">Travaux Pratiques en Laboratoire Informatique</td>
+                    </tr>
+                    <tr>
+                        <td>Mercredi</td>
+                        <td>Mathématiques Discrètes</td>
+                        <td>Anglais Technique</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section 3 : Formulaire d'inscription interactif -->
+        <section id="inscription">
+            <h2>Inscription aux séances de Travaux Pratiques (TP)</h2>
+            <form id="form-tp" action="#" method="POST">
+                <div class="champ-groupe">
+                    <label for="nom">Nom complet :</label>
+                    <input type="text" id="nom" name="nom" placeholder="Ex : Kabamba Jean" required minlength="3">
+                </div>
+
+                <div class="champ-groupe">
+                    <label for="email">E-mail institutionnel :</label>
+                    <input type="email" id="email" name="email" placeholder="etudiant@unikin.ac.cd" required>
+                </div>
+
+                <div class="champ-groupe">
+                    <label for="groupe">Groupe de TP :</label>
+                    <select id="groupe" name="groupe">
+                        <option value="Groupe 1 (Matin)">Groupe 1 (Matin : 08h00 - 12h00)</option>
+                        <option value="Groupe 2 (Après-midi)">Groupe 2 (Après-midi : 13h00 - 16h00)</option>
+                    </select>
+                </div>
+
+                <button type="submit">Valider mon inscription</button>
+
+                <!-- Zone d'affichage dynamique JavaScript -->
+                <div id="message-tp"></div>
+            </form>
+        </section>
+
+        <!-- Section 4 : Simulateur interactif de moyenne LMD -->
+        <section id="simulateur">
+            <h2>Simulateur de Moyenne Semestrielle (LMD)</h2>
+            <div class="grille-cours">
+                <div class="champ-groupe">
+                    <label for="note-web">Programmation Web (/20 — 6 cr.)</label>
+                    <input type="number" id="note-web" min="0" max="20" step="0.5" placeholder="Ex : 14">
+                </div>
+
+                <div class="champ-groupe">
+                    <label for="note-algo">Algorithmique (/20 — 6 cr.)</label>
+                    <input type="number" id="note-algo" min="0" max="20" step="0.5" placeholder="Ex : 12">
+                </div>
+
+                <div class="champ-groupe">
+                    <label for="note-archi">Architecture (/20 — 4 cr.)</label>
+                    <input type="number" id="note-archi" min="0" max="20" step="0.5" placeholder="Ex : 11">
+                </div>
+            </div>
+
+            <button type="button" id="btn-calculer" class="btn-succes">Calculer ma moyenne LMD</button>
+
+            <!-- Zone d'affichage dynamique du résultat -->
+            <div id="resultat-lmd"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; reserved by Doctorant Héritier Mpiana 2026 - Portail L1 Informatique (Système LMD) | <font color='#38bdf8'>héritier.mpiana@unikin.ac.cd</font> | <a href="#haut">Haut de page</a></p>
+    </footer>
+
+    <!-- Liaison avec le script JavaScript ES6+ -->
+    <script src="js/app.js"></script>
+</body>
+</html>
